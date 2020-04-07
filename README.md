@@ -1,5 +1,27 @@
-#### JAVA 공부
-1. JAVA의 장단점
+## JAVA 공부
+
+**:book: List**  
+
+* [JAVA의 장단점](#JAVA의-장단점)
+* [OOP(Object-Oriented Programming)](#OOP)
+* [OOP의 5대 원칙](#OOP의-5대-원칙)
+* [Overloading vs Overriding](#Overloading-vs-Overriding)
+*
+*
+*
+*
+*
+
+
+
+
+
+
+
+
+
+
+### JAVA의 장단점
 >* 장점
 >   - 운영체제에 독립적이다 -> JVM에서 동작하기 때문에 특정 운영체제에 종속되지 않음.
 >   - [객체지향 언어](#)
@@ -11,7 +33,8 @@
 >   - 속도가 느리다.(JVM에 의해 기계어로 번역되고 실행되는 과정을 거치기 때문에)
 >   - 예외처리가 느리다.(프로그래머 검사가 필요한 예외가 발생한다면 프로그래머가 선언해줘야 한다.)
 
-2. OOP(Object-Oriented Programming)
+### OOP
+>* OOP(Object-Oriented Programming)의 약자
 >* 오브젝트를 기준으로 코드를 나누어 구현하는 프로그래밍 방법 -> 객체 지향 프로그래밍  
 >* JAVA의 경우에는 구분 단위가 CLASS  
 >   - 캡슐화(Encapsulation) : 정보 은닉(infoamation hiding) 필요가 없는 정보는 외부에서 접근하지 못하도록 제한하는 것
@@ -19,7 +42,7 @@
 >   - 추상화(Abstraction) : 구체적인 사물들의 공통적인 특징을 파악해서 이를 하나의 개념(집합)으로 다루는 것
 >   - 다형성(Polymorphism) : 서로 다른 클래스의 객체가 같은 메세지를 받았을 때 각자의 방식으로 동작하는 능력
 
-2-1. OOP의 5대 원칙
+### OOP의 5대 원칙
 > "SOLID" 원칙
 >
 >   * S : 단일 책임 원칙(SRP, Single Responsibility Principle)
@@ -33,7 +56,11 @@
 >   * D : 의존 역전 원칙(DIP, Dependency Inversion Principle)
 >       * 의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것 보다는 변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 것이다.
 
-3. MVC 패턴(Model, View, Controller)
+### Overloading vs Overriding
+> Overloading :  
+> Overriding :  
+
+### MVC 패턴(Model, View, Controller)
 >   1. Model  
 >*   프로그램의 내부 상태, 즉 프로그램의 정보(데이터)를 말하는 것이다.
 >   2. Controller  
@@ -43,17 +70,14 @@
 >
 > MVC2 패턴
 
-4. Overloading vs Overriding
-> Overloading :  
-> Overriding :  
 
-5. Interface
-6. Abstract Class
-7. Generic
-8. FrameWork
-9. Library
-10. 접근 제어자
-11. static
+### Interface
+### Abstract Class
+### Generic
+### FrameWork
+### Library
+### 접근 제어자
+### static
 >   * static 멤버
 >       * 공간적 특성 : 멤버는 클래스당 하나가 생성
 >           * 멤버는 객체 내부가 아닌 별도의 공간에 생성
@@ -73,9 +97,9 @@
 >           * 객체가 사라지면 멤버도 사라진다.
 >       * 공유의 특성 : 공유되지 않는다.
 >           * 멤버는 객체 내에 각각의 공간을 유지한다.
-12. final
-13. singleton
-14. Data type
+### final
+### singleton
+### Data type
 > 1. 기본 데이터 타입(Primitive Data Type)
 >       * 정수형 : byte, short, int, long
 >       * 실수형 : float, double
