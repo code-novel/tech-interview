@@ -1,6 +1,6 @@
 ## JAVA 공부
 
-**:book: List**  
+### :book: - List
 
 * [JAVA의 장단점](#JAVA의-장단점)
 * [OOP(Object-Oriented Programming)](#OOP)
