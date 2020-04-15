@@ -24,9 +24,10 @@
 * [백트래킹(Back Tracking)](#백트래킹)
 * [서로소 집합(Disjoint-Set)](#서로소-집합)
 * [그래프(Graph)](#그래프)
-	* [프림 알고리즘(Prim Algorithm)](#Prim)
+	* [최소신장트리(MST)](#MST)
+		* [프림 알고리즘(Prim Algorithm)](#Prim)
+		* [크루스칼 알고리즘(kruskal Algorithm)](#kruskal)
 	* [다익스트라 알고리즘(Dijkstra Algorithm)](#Dijkstra)
-	* [크루스칼 알고리즘(kruskal Algorithm)](#kruskal)
 * [문자열(String)](#문자열)
 	* [KMP 알고리즘](#KMP-Algorithm)
 	* [보이어-무어 알고리즘(Boyer-Moore Algorithm)](#Boyer-Moore-Algorithm)
@@ -65,9 +66,44 @@
 > ```
 
 > #### Counting Sort
->
-```java
-```
+> 숫자가 나온 횟수를 구한 뒤, 그 숫자의 등장횟수의 누적 합을 구한다.  
+> 그 뒤 원래 배열의 뒤에서 부터 순회하면서 누적 합을 이용해 그 숫자의 자리를 찾아 넣는다.  
+> 단, Couting Sort의 경우에는 각 숫자의 등장횟수를 기록하기 때문에 그 숫자의 범위가 한정적이지 않을 경우(ex. 1 10 100000000 3 2 5와 같은 배열) 메모리 공간을 낭비하게 되는 경우가 발생할 수 있다.
+> ```java
+> import java.util.Arrays;
+> import java.util.Scanner;
+> 
+> public class CountingSort {
+> 
+> 	public static void main(String[] args) {
+> 
+> 		Scanner sc = new Scanner(System.in);
+> 		int N = sc.nextInt();
+> 		int[] number = new int[N];
+> 		int[] result = new int[N];
+> 		int[] count = new int[10];
+> 		
+> 		//1.count 세기
+> 		for(int i=0; i<N; ++i) {
+> 			number[i] = sc.nextInt();
+> 			count[number[i]]++;
+> 		}
+> 		
+> 		//2.누적 count로 변경
+> 		for(int i=1;i<10; ++i) {
+> 			count[i] = count[i-1]+count[i];
+> 		}
+> 		//3. 입력받은 원소들 누적 count이용해서 자기자리 찾아 넣기
+> 		for(int i=N-1; i>=0; --i) {
+> 			result[count[number[i]]-1] = number[i];
+> 			count[number[i]]--;
+> 		}
+> 		System.out.println(Arrays.toString(number));
+> 		System.out.println(Arrays.toString(result));
+> 	}
+> 
+> }
+> ```
 
 > #### Insertion Sort
 > 현재 위치에서, 그 이하의 배열들을 비교하여 자신이 들어갈 위치를 찾아, 그 위치에 삽입하는 알고리즘
@@ -180,7 +216,7 @@
 > 선택 여부를 비트 마스크(BitMask) 연산을 통해 체크할 수도 있다.  
 > * Permutation 예제 코드 03
 >	```java
->	private static void permutation(int index,int 	selected) {
+>	private static void permutation(int index,int selected) {
 >		if(index == R) {
 >			totalCount++;
 >			System.out.println(Arrays.toString	(numbers));
