@@ -107,8 +107,23 @@
 
 > #### Insertion Sort
 > 현재 위치에서, 그 이하의 배열들을 비교하여 자신이 들어갈 위치를 찾아, 그 위치에 삽입하는 알고리즘
-```java
-```
+> ```java
+> public static void insertionSort(int list[]) {
+> 	final int SIZE = list.length;
+> 	for (int i = 1; i < SIZE; ++i) { // 정렬되지 않은 집합 
+> 		int temp = list[i]; // 정렬되야하는 원소
+> 		for (int j = 0; j < i; ++j) { // 정렬된 집합
+> 			if(temp<list[j]) { //삽입지점을 찾았다면
+> 				for (int k = i-1; k >= j; --k) { // 정렬된 집합의 맨 뒤부터 삽입지점까지 뒤로 민다.
+> 					list[k+1] = list[k];
+> 				}
+> 				list[j] = temp; // 삽입지점에 원소 넣기
+> 				break;
+> 			}
+> 		}	
+> 	}	
+> }
+> ```
 
 > #### Selection Sort
 > 현재 위치에 들어갈 값을 찾아 정렬하는 알고리즘
