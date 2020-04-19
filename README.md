@@ -127,8 +127,24 @@
 
 > #### Selection Sort
 > 현재 위치에 들어갈 값을 찾아 정렬하는 알고리즘
-```java
-```
+> ```java
+> public void selectionSort(int[] data){
+>     int size = data.length;
+>     int min; //최소값을 가진 데이터의 인덱스 저장 변수
+>     int temp;
+>     for(int i=0; i<size-1; i++){ // size-1 : 마지막 요소는 자연스럽게 정렬됨
+>         min = i;
+>         for(int j=i+1; j<size; j++){
+>             if(data[min] > data[j]){
+>                 min = j;
+>             }
+>         }
+>         temp = data[min];
+>         data[min] = data[i];
+>         data[i] = temp;
+>     }
+> }
+> ```
 
 > #### Merge Sort
 > 하나의 원소 집합을 두 개의 균등한 크기로 분할하고 분할된 부분 집합을 정렬한 다음, 두 개의 정렬된 부분 집합을 합하여 전체가 정렬된 리스트로 합쳐서 정렬하는 알고리즘
