@@ -148,8 +148,34 @@
 
 > #### Merge Sort
 > 하나의 원소 집합을 두 개의 균등한 크기로 분할하고 분할된 부분 집합을 정렬한 다음, 두 개의 정렬된 부분 집합을 합하여 전체가 정렬된 리스트로 합쳐서 정렬하는 알고리즘
-```java
-```
+> ```java
+> // 병합을 하기 위한 method
+> private static void merge(int[] list, int start, int middle, int end) {
+> 	int left=start , right=middle+1;
+> 	int i=0; // 새롭게 채워질 배열의 인덱스
+> 	int[] newArr = new int[end-start+1];
+> 	do {
+> 		if (list[left] < list[right]) {
+> 			newArr[i++] = list[left++];
+> 		} else {
+> 			newArr[i++] = list[right++];
+> 		} 
+> 	} while (left<=middle && right<=end);
+> 	// 오른쪽집합이 다 처리된경우:남은 왼쪽집합 처리
+> 	while(left<=middle) newArr[i++] = list[left++]; 
+> 	// 왼쪽집합이 다 처리된경우:남은 오른쪽집합 처리
+> 	while(right<=end) newArr[i++] = list[right++]; 
+> 	System.arraycopy(newArr, 0, list, start, newArr.length);
+> }
+> //Merge Sort Code
+> public static void mergeSort(int list[], int start, int end) {
+> 	if(start == end) return; // 집합의 크기가 1이므로 분할불가(이미 정렬완료)
+> 	int middle = (start+end)/2;
+> 	mergeSort(list, start, middle); // 중간위치값 왼쪽집합에 포함
+> 	mergeSort(list, middle+1, end); 
+> 	merge(list,start,middle,end);
+> }
+> ```
 
 > #### Quick Sort
 > QuickSort
