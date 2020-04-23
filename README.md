@@ -178,9 +178,41 @@
 > ```
 
 > #### Quick Sort
-> QuickSort
-```java
-```
+> pivot과 two pointer를 활용하여 pivot을 기준으로 작은 값은 왼쪽으로 큰 값은 오른쪽으로 보내 정렬하는 방식.
+> ```java
+> public static void quickSort(int[] list,int begin,int end) {
+> // 분류하여 피봇위치 확정(피봇의 자기자기 찾기)
+> 	if(begin<end) { // 집합의 크기가 2이상
+> 		int p = fixPivot(list,begin,end);
+> 		// 확정된 피봇의 왼쪽집합 정렬
+> 		quickSort(list, begin, p-1);
+> 		// 확정된 피봇의 오른쪽집합 정렬
+> 		quickSort(list, p+1, end);
+> 	}
+> }
+> private static int fixPivot(int[] list, int begin, int end) {
+> 	int pivot,left,right,temp;
+> 	left = begin+1;
+> 	right = end;
+> 	pivot = begin;
+> 
+> 	do {
+> 		while (left < end && list[left] < list[pivot]) left++;
+> 		while (right > begin && list[right] >= list[pivot]) right--;
+> 		if (left < right) {
+> 			temp = list[left];
+> 			list[left] = list[right];
+> 			list[right] = temp;
+> 		} 
+> 	} while (left<right);
+> 	
+> 	temp = list[pivot];
+> 	list[pivot] = list[right];
+> 	list[right] = temp;
+> 	
+> 	return right;
+> }
+> ```
 
 ---
 ### 재귀
