@@ -261,7 +261,7 @@
 
 ### 순열 조합
 #### 순열
-> N개 중에 R개를 뽑는 경우의 수를 구하는 것  
+> N개 중에 R개를 뽑는 경우의 수(순서 있음)를 구하는 것  
 > 중복을 허용하는 경우와 중복을 허용하지 않는 경우로 나눌 수 있다.  
 > * Permutation 예제 코드 01
 > 	```java
@@ -321,7 +321,22 @@
 >	```
 
 #### 조합
-
+> N개 중에 R개를 순서 없이 뽑는 경우의 수를 구하는 것  
+> 배열을 처음부터 돌면서 현재 index를 선택한 경우와 선택하지 않은 경우로 나눠서 완전 탐색으로 구현하면 된다.
+> 	```java
+> 	private static void combination(int index,int count) {
+> 		if(count==R) {
+> 			System.out.println(Arrays.toString(numbers));
+> 			return;
+> 		}
+> 		
+> 		if(index<=N) {
+> 			numbers[count] = index;
+> 			combination(index+1,count+1); // 선택
+> 			combination(index+1,count);	// 비선택
+> 		}
+> 	}
+> 	```
 ---
 
 ### 이분탐색
