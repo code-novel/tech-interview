@@ -14,7 +14,7 @@
 	* [순열(Permutation)](#순열)
 	* [조합(Combination)](#조합)
 * [부분집합(SubSet)](#부분집합)
-* [Memorization](#Memorization)
+* [Memoization](#Memorization)
 * [DP(Dynamic Programming)](#DP)
 * [탐색](#탐색)
 	* [이분탐색(Binary Search)](#이분탐색)
@@ -360,7 +360,7 @@
 > ```
 ---
 
-### Memorization
+### Memoization
 > Memory에 특정 정보를 기록해두고 필요할 때 마다 정보를 가져와서 활용하는 기법.  
 > 이미 했던 연산을 반복할 필요가 없어서 시간을 줄일 수 있다.  
 > Dynamic Programming([동적 계획법](#DP))의 핵심이 되는 기술이다.  
