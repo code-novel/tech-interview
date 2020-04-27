@@ -329,7 +329,6 @@
 > 			System.out.println(Arrays.toString(numbers));
 > 			return;
 > 		}
-> 		
 > 		if(index<=N) {
 > 			numbers[count] = index;
 > 			combination(index+1,count+1); // 선택
@@ -339,6 +338,27 @@
 > 	```
 ---
 
+### 부분집합
+> 조합(Combination)과 유사함.  
+> 부분집합(Subset)을 구하는 방법으로 index의 선택 여부를 기록하면서 재귀를 통해 구현.  
+> ```java
+> static boolean[] selected;
+> private static void makeSubSet(int index) {
+> 	if(index == N) {
+> 		for (int s = 0; s < selected.length; s++) {
+> 			System.out.print((selected[s]?numbers[s]:"X")+"\t");
+> 		}
+> 		System.out.println();
+> 		return;
+> 	}
+> 	
+> 	selected[index]=true;
+> 	makeSubSet(index+1);
+> 	selected[index]=false;
+> 	makeSubSet(index+1);
+> }
+> ```
+---
 ### 이분탐색
 > Arrays.binarySearch(배열, 값)을 사용한다.
 > 찾는 값의 index를 반환하며 없는 경우 예상되는 위치의 -값을 반환한다.<반드시 정렬된 상태로 사용할 것!>
