@@ -359,7 +359,18 @@
 > }
 > ```
 ---
-### 이분탐색
+
+### Memorization
+> Memory에 특정 정보를 기록해두고 필요할 때 마다 정보를 가져와서 활용하는 기법.  
+> 이미 했던 연산을 반복할 필요가 없어서 시간을 줄일 수 있다.  
+> Dynamic Programming([동적 계획법](#DP))의 핵심이 되는 기술이다.  
+```java
+```
+---
+### DP
+---
+### 탐색
+#### 이분탐색
 > Arrays.binarySearch(배열, 값)을 사용한다.
 > 찾는 값의 index를 반환하며 없는 경우 예상되는 위치의 -값을 반환한다.<반드시 정렬된 상태로 사용할 것!>
 > ```java
@@ -370,9 +381,13 @@
 > 	System.out.println(Arrays.binarySearch(values, 20));	//3반환
 > 	System.out.println(Arrays.binarySearch(values, 17));	//-4반환
 > ```
-
+#### DFS
+#### BFS
 ---
-
+### 욕심쟁이 알고리즘
+---
+### 백트래킹
+---
 ### 서로소 집합
 > ```java
 > 	private static int parents[];
@@ -394,3 +409,14 @@
 > 		return true;
 > 	}
 > ```
+---
+### 그래프
+#### MST
+##### Prim
+##### Kruskal
+#### Dijkstra
+---
+### 문자열
+#### KMP Algorithm
+#### Boyer Moore Algorithm
+---
