@@ -3,33 +3,33 @@
 ---
 ## 1. 기본 알고리즘
 * [정렬](#정렬)
->- [Bubble Sort](#bubble-sort)
->- [Counting Sort](#counting-sort)
->- [Insertion Sort](#insertion-sort)
->- [Selection Sort](#selection-sort)
->- [Merge Sort](#merge-sort)
->- [Quick Sort](#quick-sort)
+	* [Bubble Sort](#bubble-sort)
+	* [Counting Sort](#counting-sort)
+	* [Insertion Sort](#insertion-sort)
+	* [Selection Sort](#selection-sort)
+	* [Merge Sort](#merge-sort)
+	* [Quick Sort](#quick-sort)
 * [재귀(Reculsive)](#재귀)
 * [순열(Permutation)/조합(Combination)](#순열-조합)
->- [순열(Permutation)](#순열)
->- [조합(Combination)](#조합)
+	* [순열(Permutation)](#순열)
+	* [조합(Combination)](#조합)
 * [부분집합(SubSet)](#부분집합)
 * [Memorization](#Memorization)
 * [DP(Dynamic Programming)](#DP)
 * [탐색](#탐색)
->- [이분탐색(Binary Search)](#이분탐색)
->- [DFS(깊이 우선 탐색)](#DFS)
->- [BFS(너비 우선 탐색)](#BFS)
+	* [이분탐색(Binary Search)](#이분탐색)
+	* [DFS(깊이 우선 탐색)](#DFS)
+	* [BFS(너비 우선 탐색)](#BFS)
 * [욕심쟁이 알고리즘(Greedy)](#욕심쟁이-알고리즘)
 * [백트래킹(Back Tracking)](#백트래킹)
 * [서로소 집합(Disjoint-Set)](#서로소-집합)
 * [그래프(Graph)](#그래프)
->- [프림 알고리즘(Prim Algorithm)](#Prim)
->- [다익스트라 알고리즘(Dijkstra Algorithm)](#Dijkstra)
->- [크루스칼 알고리즘(kruskal Algorithm)](#kruskal)
+	* [프림 알고리즘(Prim Algorithm)](#Prim)
+	* [다익스트라 알고리즘(Dijkstra Algorithm)](#Dijkstra)
+	* [크루스칼 알고리즘(kruskal Algorithm)](#kruskal)
 * [문자열(String)](#문자열)
->- [KMP 알고리즘](#KMP-Algorithm)
->- [보이어-무어 알고리즘(Boyer-Moore Algorithm)](#Boyer-Moore Algorithm)
+	* [KMP 알고리즘](#KMP-Algorithm)
+	* [보이어-무어 알고리즘(Boyer-Moore Algorithm)](#Boyer-Moore-Algorithm)
 
 ---
 
@@ -41,41 +41,28 @@
 
 ---
 
-## 2. JAVA 자료구조(알고리즘용)
-* [Binary Search](#binary-search)
-* [Disjoint-Set](#disjoint-set)
-* 정리를
-
----
-## 3. PYTHON 자료구조(알고리즘용)
-* [뭐했더라?](#1day1commit)
-* 일단은
-* 정리를
----
-
-
 ### 정렬
 
 > #### Bubble Sort
 > 서로 인접한 두 원소를 검사하여 정렬하는 알고리즘
-```java
-private static void sort(int[] number) {
-		int size = number.length,temp=0;
-		for(int i=size-1; i>0; --i) {
-			boolean isSwap = false;
-			for(int j=0; j<i; ++j) {
-				if(number[j]>number[j+1]) {
-					temp = number[j];
-					number[j] = number[j+1];
-					number[j+1] = temp;
-					isSwap = true;
-				}
-			}
-			System.out.println("sort : "+Arrays.toString(number));
-			if(!isSwap) break;
-		}
-	}
-```
+> ```java
+> private static void sort(int[] number) {
+> 		int size = number.length,temp=0;
+> 		for(int i=size-1; i>0; --i) {
+> 			boolean isSwap = false;
+> 			for(int j=0; j<i; ++j) {
+> 				if(number[j]>number[j+1]) {
+> 					temp = number[j];
+> 					number[j] = number[j+1];
+> 					number[j+1] = temp;
+> 					isSwap = true;
+> 				}
+> 			}
+> 			System.out.println("sort : "+Arrays.toString(number));
+> 			if(!isSwap) break;
+> 		}
+> 	}
+> ```
 
 > #### Counting Sort
 >
@@ -147,38 +134,46 @@ private static void sort(int[] number) {
 > 	```
 ---
 
-### Binary Search
-> Arrays.binarySearch(배열, 값)을 사용한다.
-> 찾는 값의 index를 반환하며 없는 경우 예상되는 위치의 -값을 반환한다.<반드시 정렬된 상태로 사용할 것!>
-```java
-	int[] values = {3,11,15,20,21,29};
-	Arrays.sort(values);
-	System.out.println(Arrays.toString(values));
-	System.out.println(Arrays.binarySearch(values, 15));	//2반환
-	System.out.println(Arrays.binarySearch(values, 20));	//3반환
-	System.out.println(Arrays.binarySearch(values, 17));	//-4반환
-```
+### 순열 조합
+#### 순열
+> N개 중에 R개를 뽑는 경우의 수를 구하는 것  
+> 중복을 허용하는 경우와 중복을 허용하지 않는 경우로 나눌 수 있다.
+#### 조합
 
 ---
 
-### DisJoint-Set
-```java
-	private static int parents[];
-	
-	static void make() { // make set : 모든 원소를 개별적인 집합으로 생성
-		Arrays.fill(parents, -1);
-	}
+### 이분탐색
+> Arrays.binarySearch(배열, 값)을 사용한다.
+> 찾는 값의 index를 반환하며 없는 경우 예상되는 위치의 -값을 반환한다.<반드시 정렬된 상태로 사용할 것!>
+> ```java
+> 	int[] values = {3,11,15,20,21,29};
+> 	Arrays.sort(values);
+> 	System.out.println(Arrays.toString(values));
+> 	System.out.println(Arrays.binarySearch(values, 15));	//2반환
+> 	System.out.println(Arrays.binarySearch(values, 20));	//3반환
+> 	System.out.println(Arrays.binarySearch(values, 17));	//-4반환
+> ```
 
-	static int find(int a) {
-		if(parents[a]<0) return a; // 자신이 루트이면 자신 리턴
-		return parents[a] = find(parents[a]);
-	}
+---
 
-	static boolean union(int a,int b) {
-		int aRoot = find(a);
-		int bRoot = find(b);
-		if(aRoot == bRoot) return false;
-		parents[bRoot] = aRoot;
-		return true;
-	}
-```
+### 서로소 집합
+> ```java
+> 	private static int parents[];
+> 	
+> 	static void make() { // make set : 모든 원소를 개별적인 집합으로 생성
+> 		Arrays.fill(parents, -1);
+> 	}
+> 
+> 	static int find(int a) {
+> 		if(parents[a]<0) return a; // 자신이 루트이면 자신 리턴
+> 		return parents[a] = find(parents[a]);
+> 	}
+> 
+> 	static boolean union(int a,int b) {
+> 		int aRoot = find(a);
+> 		int bRoot = find(b);
+> 		if(aRoot == bRoot) return false;
+> 		parents[bRoot] = aRoot;
+> 		return true;
+> 	}
+> ```
