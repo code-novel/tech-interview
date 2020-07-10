@@ -8,7 +8,7 @@
 ---
 ## 2. JAVA 자료구조(알고리즘용)
 * [Binary Search](#binary-search)
-* 일단은
+* [Disjoint-Set](#DisJointSet)
 * 정리를
 ---
 ## 3. PYTHON 자료구조(알고리즘용)
