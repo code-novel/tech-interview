@@ -4,6 +4,7 @@
 * [정렬](#정렬)
 >- [Bubble Sort](#bubble-sort)
 >- [Counting Sort](#counting-sort)
+>- [Insertion Sort](#insertion-sort)
 * 정리를
 ---
 ## 2. JAVA 자료구조(알고리즘용)
@@ -42,6 +43,13 @@ private static void sort(int[] number) {
 ```
 >#### Counting Sort
 >
+```java
+```
+
+>#### Insertion Sort
+>
+```java
+```
 
 ### Binary Search
 > Arrays.binarySearch(배열, 값)을 사용한다.
