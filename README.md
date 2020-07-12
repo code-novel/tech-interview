@@ -5,6 +5,8 @@
 >- [Bubble Sort](#bubble-sort)
 >- [Counting Sort](#counting-sort)
 >- [Insertion Sort](#insertion-sort)
+>- [Selection Sort](#selection-sort)
+
 * 정리를
 ---
 ## 2. JAVA 자료구조(알고리즘용)
@@ -47,6 +49,11 @@ private static void sort(int[] number) {
 ```
 
 >#### Insertion Sort
+>
+```java
+```
+
+>#### Selection Sort
 >
 ```java
 ```
