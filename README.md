@@ -6,12 +6,13 @@
 >- [Counting Sort](#counting-sort)
 >- [Insertion Sort](#insertion-sort)
 >- [Selection Sort](#selection-sort)
+>- [Merge Sort](#merge-sort)
 
 * 정리를
 ---
 ## 2. JAVA 자료구조(알고리즘용)
 * [Binary Search](#binary-search)
-* [Disjoint-Set](#DisJointSet)
+* [Disjoint-Set](#disjoint-set)
 * 정리를
 ---
 ## 3. PYTHON 자료구조(알고리즘용)
@@ -58,6 +59,11 @@ private static void sort(int[] number) {
 ```java
 ```
 
+>#### Merge Sort
+>
+```java
+```
+
 ### Binary Search
 > Arrays.binarySearch(배열, 값)을 사용한다.
 > 찾는 값의 index를 반환하며 없는 경우 예상되는 위치의 -값을 반환한다.<반드시 정렬된 상태로 사용할 것!>
@@ -70,7 +76,7 @@ private static void sort(int[] number) {
 	System.out.println(Arrays.binarySearch(values, 17));	//-4반환
 ```
 		
-### DisJointSet
+### DisJoint-Set
 ```java
 	private static int parents[];
 	
