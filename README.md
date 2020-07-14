@@ -7,6 +7,7 @@
 >- [Insertion Sort](#insertion-sort)
 >- [Selection Sort](#selection-sort)
 >- [Merge Sort](#merge-sort)
+>- [Quick Sort](#quick-sort)
 
 * 정리를
 ---
@@ -50,7 +51,7 @@ private static void sort(int[] number) {
 ```
 
 >#### Insertion Sort
->
+>현재 위치에서, 그 이하의 배열들을 비교하여 자신이 들어갈 위치를 찾아, 그 위치에 삽입하는 배열 알고리즘
 ```java
 ```
 
@@ -60,6 +61,11 @@ private static void sort(int[] number) {
 ```
 
 >#### Merge Sort
+>
+```java
+```
+
+>#### Quick Sort
 >
 ```java
 ```
