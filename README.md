@@ -9,7 +9,7 @@
 >- [Merge Sort](#merge-sort)
 >- [Quick Sort](#quick-sort)
 
-* 정리를
+* 정리를 하자
 ---
 ## 2. JAVA 자료구조(알고리즘용)
 * [Binary Search](#binary-search)
