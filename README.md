@@ -3,9 +3,9 @@
 
 > * [JavaScript란?](#JavaScript)
 > * [변수](#변수)
->   * var
->   * let
->   * const
+>   * [var](#var)
+>   * [let](#let)
+>   * [const](#const)
 >
 > ### JavaScript
 >   * 자바 스크립트에 대하여...
