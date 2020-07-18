@@ -1,4 +1,5 @@
 # Algorithm 정리
+
 ---
 ## 1. 기본 알고리즘
 * [정렬](#정렬)
@@ -16,6 +17,7 @@
 * [Binary Search](#binary-search)
 * [Disjoint-Set](#disjoint-set)
 * 정리를
+
 ---
 ## 3. PYTHON 자료구조(알고리즘용)
 * [뭐했더라?](#1day1commit)
