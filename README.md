@@ -48,6 +48,7 @@ private static void sort(int[] number) {
 		}
 	}
 ```
+
 >#### Counting Sort
 >
 ```java
