@@ -141,20 +141,20 @@
 > * Permutation 예제 코드 01
 > 	```java
 > 	// 1,2,3
-> 		// 3자리수 순열
-> 		// 3P3 = 3! = 6가지경우
-> 		public static void main(String[] args) {
-> 			int n = 3;
-> 			for (int i = 1; i <= n; ++i) {// 첫째수 : 1,2,3 시도
-> 				for (int j = 1; j <= n; ++j) { // 둘째수 : 1,2,3 시도
-> 					if(i != j) { // 첫째 수와 둘째 수가 다르면
-> 						for (int k = 1; k <= n; ++k) {// 세째수 : 1,2,3 시도
-> 							if(i!=k && j!=k) System.out.println(i+" "+j+" "+k);
-> 						}
+> 	// 3자리수 순열
+> 	// 3P3 = 3! = 6가지경우
+> 	public static void main(String[] args) {
+> 		int n = 3;
+> 		for (int i = 1; i <= n; ++i) {// 첫째수 : 1,2,3 시도
+> 			for (int j = 1; j <= n; ++j) { // 둘째수 : 1,2,3 시도
+> 				if(i != j) { // 첫째 수와 둘째 수가 다르면
+> 					for (int k = 1; k <= n; ++k) {// 세째수 : 1,2,3 시도
+> 						if(i!=k && j!=k) System.out.println(i+" "+j+" "+k);
 > 					}
 > 				}
 > 			}
 > 		}
+> 	}
 > 	```
 > 3개의 숫자 중 3개를 선택하는 경우 반복문이 3중으로 작성되게 된다.
 > 이 과정을 줄이기 위해 재귀함수를 사용할 수 있다.  
@@ -175,24 +175,24 @@
 > 				isSelected[i]= false;
 > 			}
 > 		}		
-> 		}
+> 	}
 > 	```
 > 선택 여부를 비트 마스크(BitMask) 연산을 통해 체크할 수도 있다.  
 > * Permutation 예제 코드 03
 >	```java
->		private static void permutation(int index,int 	selected) {
->			if(index == R) {
->				totalCount++;
->				System.out.println(Arrays.toString	(numbers));
->				return;
->			}
->			for (int i = 1; i <=N ; ++i) {
->				if((selected & 1<<i)==0) { // 해당수가 	선택되지 않았다면
->					numbers[index] = i;				 
->					permutation(index+1,selected | 1<<i);/	/ 현재 선택한수 사용한 플래그 처리
->				}
+>	private static void permutation(int index,int 	selected) {
+>		if(index == R) {
+>			totalCount++;
+>			System.out.println(Arrays.toString	(numbers));
+>			return;
+>		}
+>		for (int i = 1; i <=N ; ++i) {
+>			if((selected & 1<<i)==0) { // 해당수가 	선택되지 않았다면
+>				numbers[index] = i;				 
+>				permutation(index+1,selected | 1<<i);/	/ 현재 선택한수 사용한 플래그 처리
 >			}
 >		}
+>	}
 >	```
 
 #### 조합
