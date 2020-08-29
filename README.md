@@ -363,11 +363,72 @@
 ### Memoization
 > Memory에 특정 정보를 기록해두고 필요할 때 마다 정보를 가져와서 활용하는 기법.  
 > 이미 했던 연산을 반복할 필요가 없어서 시간을 줄일 수 있다.  
-> Dynamic Programming([동적 계획법](#DP))의 핵심이 되는 기술이다.  
-```java
-```
+> Dynamic Programming([동적 계획법](#DP))의 핵심이 되는 기술이다. 
+> * 메모리제이션으로 구현한 Factorial 
+> 	```java
+> 	import java.util.HashMap;
+> 	//값을 저장하기 위해 HashMap을 사용함.
+> 	public class Memoization {
+> 		static HashMap<Integer, Integer> map=new HashMap<>();
+> 		static int factorial(int number){
+> 			if(map.containsKey(number)){
+> 				return (int) map.get(number);
+> 			}else{
+> 				if(number>0){
+> 					int temp = number*factorial(number-1);
+> 					map.put(number, temp);
+> 					return temp;
+> 				}else{
+> 					return 1;
+> 				}
+> 			}
+> 		}
+> 	
+> 	}
+> 	```
 ---
+
 ### DP
+> 동적 계획법(Dynamic Programming)이라고 한다.  
+> 전체 문제를 작은 문제로 단순화한 다음 점화식으로 만들어 재귀적인 구조를 활용하여 전체 문제를 해결하는 방식.  
+> [메모이제이션(Memoization)](#Memoization)을 활용하여 함수를 다시 호출하지 않고 값을 빠르게 가져온다.  
+> * knapsack 문제
+>	```java
+>	public static void main(String[] args) {
+>		int[] weights = new int[N+1];	// 물건의 무게들
+>		int[] profits = new int[N+1];	// 물건의 값어치
+>		int[][] D = new int[N+1][W+1];	// dp
+>		boolean[][] V = new boolean[N+1][W+1];	//포함 여부 저장
+>		for (int i = 1; i <= N; ++i) { // 물건 1부터 물건 N까지 고려..
+>			for (int j = 1; j <= W; ++j) { // 무게 1부터 W까지 계산
+>				if(weights[i]<=j) { // 포함이 가능한 상황
+>						// 포함시도, 비포함시도
+>					//D[i][j] = Math.max(D[i-1][j-weights[i]]+profits[i], D[i-1][j]);
+>					if(D[i-1][j-weights[i]]+profits[i]>D[i-1][j]) {
+>						D[i][j] = D[i-1][j-weights[i]]+profits[i];
+>						V[i][j] = true; // 현물건이 포함되었다고 체크
+>					}else {
+>						D[i][j] = D[i-1][j];
+>					}
+>					// 
+>				}else { // 비포함 : 포함이 불가능한 상황
+>					D[i][j] = D[i-1][j];
+>				}
+>			}
+>		}
+>		System.out.println(D[N][W]);
+>		int tempN = N, tempW = W;
+>		ArrayList<Integer> list = new ArrayList<Integer>();
+>		do {	//들어가 있는 물건들 리스트에 저장.
+>			if(V[tempN][tempW]) {
+>				list.add(tempN);
+>				tempW -= weights[tempN];
+>			}
+>			tempN--;
+>		}while(tempN>0);
+>		System.out.println(list.toString());
+>	}
+>	```
 ---
 ### 탐색
 #### 이분탐색
@@ -382,6 +443,30 @@
 > 	System.out.println(Arrays.binarySearch(values, 17));	//-4반환
 > ```
 #### DFS
+> 깊이 우선 탐색(Depth-First Search)  
+> 한 노드에서 시작해서 다음 분기(branch)로 넘어가기 전에 해당 분기를 완벽하게 탐색하는 기법.  
+> ex) 미로 탐색
+> * 특징
+> 	* 자기 자신을 호출하는 순환 알고리즘의 형태를 가지고 있다.
+> 	* 전위 순회(Pre-Order Traversals)를 포함한 다른 형태의 트리 순회는 모두 DFS의 한 종류이다.
+>	* 어떤 노드를 방문했는지 여부를 반드시 검사하여야 한다.(무한 루프에 빠질 수 있음.)
+>	* 구현 방법으로 재귀 호출, STACK을 사용할 수 있다.
+```java
+public static int dx[]= {-1,1,0,0};	//4방향 탐색을 위한 dx, dy
+public static int dy[]= {0,0,1,-1};
+public static int[][]map;			//보통 Map
+public static boolean[][]visited;	//방문여부 check함
+public static void dfs(int r, int c) {	//dfs는 보통 재귀형태.
+	visited[r][c]=true;
+	for(int i=0;i<4;++i) {		//사방탐색 후 조건에 맞으면
+		int nr=r+dx[i];			//재귀호출을 수행해서 깊이 우선 탐색을 한다.
+		int nc=c+dy[i];
+		if(map[nr][nc]==1&&!visited[nr][nc]) {
+			dfs(nr,nc);
+		}
+	}
+}
+```
 #### BFS
 ---
 ### 욕심쟁이 알고리즘
