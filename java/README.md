@@ -5,6 +5,7 @@
 * [JAVA의 장단점](#JAVA의-장단점)
 * [OOP(Object-Oriented Programming)](#OOP)
 * [OOP의 5대 원칙](#OOP의-5대-원칙)
+* [바이트코드](#바이트코드)
 * [Data Type](#Data-Type)
 * [static 변수](#static-변수)
 * [Overloading vs Overriding](#Overloading-vs-Overriding)
@@ -15,8 +16,8 @@
 
 ### JAVA의 장단점
 >* 장점
->   - 운영체제에 독립적이다 -> JVM에서 동작하기 때문에 특정 운영체제에 종속되지 않음.
->   - [객체지향 언어](#)
+>   - 운영체제에 독립적이다 -> JVM에서 동작하기 때문에 특정 운영체제에 종속되지 않음. ([바이트코드](#바이트코드))
+>   - [객체지향 언어](#OOP)
 >   - 자동으로 메모리를 관리(Garbage Collector)
 >   - Open Source->많은 개발자, 라이브러리
 >   - Multi-Thread
@@ -31,8 +32,8 @@
 >* JAVA의 경우에는 구분 단위가 CLASS  
 >   - 캡슐화(Encapsulation) : 정보 은닉(infoamation hiding) 필요가 없는 정보는 외부에서 접근하지 못하도록 제한하는 것
 >   - 상속(Inheritance) : 기존 CLASS의 변수와 메소드를 그대로 가지면서 추가적인 기능도 가지는 CLASS를 새로 만드는 것
->   - 추상화(Abstraction) : 구체적인 사물들의 공통적인 특징을 파악해서 이를 하나의 개념(집합)으로 다루는 것
 >   - 다형성(Polymorphism) : 서로 다른 클래스의 객체가 같은 메세지를 받았을 때 각자의 방식으로 동작하는 능력
+>   - 추상화(Abstraction) : 구체적인 사물들의 공통적인 특징을 파악해서 이를 하나의 개념(집합)으로 다루는 것(※ 3대 속성에서 제외)
 
 ### OOP의 5대 원칙
 > "SOLID" 원칙
@@ -47,6 +48,11 @@
 >       * 인터페이스를 클라이언트에 특화되도록 분리시키라는 설계원칙이다.
 >   * D : 의존 역전 원칙(DIP, Dependency Inversion Principle)
 >       * 의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것 보다는 변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 것이다.
+
+### 바이트코드
+> * 코드를 컴파일하면 바이트코드 즉 (.class)형태로 출력이 되는데 이 Class형태는 JVM에 의해 런타임시 완벽한 기계코드로 변경되어 실행
+> * JVM만 있으면 재컴파일 없이 여러 플랫폼에서 똑같이 실행된다.
+> * 대신 JVM은 많은 메모리를 사용하고 실행속도가 느리다는 단점이 있다.
 
 ### Data Type
 > 1. 기본 데이터 타입(Primitive Data Type)
@@ -87,8 +93,11 @@
 >           * 멤버는 객체 내에 각각의 공간을 유지한다.
 
 ### Overloading vs Overriding
-> Overloading :  
-> Overriding :  
+> * Overloading
+>   * 두 메서드가 같은 이름을 갖고 있으나 인자의 수나 자료형이 다른 경우
+> * Overriding
+>   * 상위 클래스의 메서드와 이름과 용례(Signature)가 같은 함수를 하위 클래스에 재정의하는 것
+>   * 상속 관계에 있는 클래스 간에 같은 이름의 메서드를 정의
 
 ### MVC 패턴(Model, View, Controller)
 >   1. Model  
