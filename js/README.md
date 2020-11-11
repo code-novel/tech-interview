@@ -1,20 +1,20 @@
 # JS
 ## JavaScript 요점 정리
 
-> * [JavaScript란?](#JavaScript)
-> * [변수](#변수)
->   * [var](#var)
->   * [let](#let)
->   * [const](#const)
-> * [함수와 메서드](#함수와-메서드)
->   * [메서드(Method)](#메서드) 
->   * [함수(Function)](#함수)
->   * [함수 객체의 기본 프로퍼티(Property)](#함수-객체의-기본-프로퍼티)
->   * [함수 생성 방법](#함수-생성)
->       * [함수 선언(Function Declaration)](#함수-선언)
->       * [함수 표현식(Function Expression)](#함수-표현식)
->       * [Function() 생성자 함수](#Function()-생성자-함수)
->
+ * [JavaScript란?](#JavaScript)
+ * [변수](#변수)
+   * [var](#var)
+   * [let](#let)
+   * [const](#const)
+ * [함수와 메서드](#함수와-메서드)
+   * [메서드(Method)](#메서드) 
+   * [함수(Function)](#함수)
+   * [함수 객체의 기본 프로퍼티(Property)](#함수-객체의-기본-프로퍼티)
+   * [함수 생성 방법](#함수-생성)
+       * [함수 선언(Function Declaration)](#함수-선언)
+       * [함수 표현식(Function Expression)](#함수-표현식)
+       * [Function() 생성자 함수](#Function()-생성자-함수)
+
 > ### JavaScript
 >   * 자바 스크립트에 대하여...
 >
