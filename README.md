@@ -89,7 +89,16 @@
 
 ## :three: BaekEnd
 ### Servlet
-
+### [:link:Link](servlet/README.md)
+* Java SE
+* 서블릿(Servlet)
+* JSP
+* 웹 서비스
+* 웹 서버와 웹 애플리케이션 서버
+* 컨테이너
+* HTTP란?
+* HTTP 요청방식
+* 요청 URI
 
 ### Spring
 
