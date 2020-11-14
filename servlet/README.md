@@ -107,7 +107,7 @@
 * 웹 클라이언트가 웹서버에 요청한 서비스 문서의 정보.
 * 네트워크의 자원 정보인 URL의 일부로서 URL(Uniform Resource Locator)은 네트워크상에 존재하는 자원을 찾아가기 위한 정보.
 * URI 형식
-    * 프로토콜(protocol)
+    * 프로토콜(protocol)ㅉ
         * 서버와 통신하기 위한 규약으로서 서버마다 사용하는 프로토콜이 정해져 있음.
         * ex) 웹서버는 HTTP:// 오라클 DBMS jdbc:oracle:thin:@
     * 서버 주소
@@ -207,3 +207,14 @@
 * @WebServlet 설정을 통한 서블릿 접ㅈ근방법은 서블릿3.0부터 지원함.
 * 서블릿의 클래스 선언부 앞에 @WebServlet(접근 시 사용할 URI)를 지정.
 * import 문으로 javax.servlet.annotation.WebServlet 클래스를 소스에 포함해야 함.
+
+### 요청정보와 응답정보
+* 요청정보는 HttpServletRequest를 처리하고, 응답정보는 HttpServletResponse가 처리함.
+![n](imgs/servlet_02.png)
+1. 클라이언트가 웹 브라우저에서 서비스를 요청함. 이때 HTTP 프로토콜 기반으로 요청정보가 만들어져 웹서버에 전달됨.
+2. 웹서버는 클라이언트로부터 전달받은 요청정보의 URI를 살펴보고, 서블릿이라면 서블릿 컨테이너에 처리를 넘김.
+3. 서블릿 컨테이너는 요청받은 서블릿 클래스 파일을 찾아서 실행함.
+4. 실행할 때 첫 순서는 최초의 요청인지를 파악함. 최초의 요청이라면 메모리에 로딩 후 객체를 생성하고 init() 메소드를 호출함.
+5. init() 메소드 실행이 끝난 다음에는 최초의 요청이든지 그렇지 않든지 서블릿 실행 요청이 들어올 때마다 실행되는 작업으로, 서블릿 컨테이너는HttpServletRequest와 HttpServletResponse 객체를 생성함. HttpServletRequest 객체는 클라이언트로부터 요청받은 정보를 처리할 목적으로 생성하고, HttpServletResponse 객체는 클라이언트에게 보내는 응답정보를 처리할 목적으로 생성함.
+6. service() 메소드를 호출함. 이때, 앞에서 생성한 HttpServletRequest와 HttpServletResponse 객체의 주소를 인자로 넘김. service() 메소드에서는 인자로 받은 두 객체를 사용하여 프로그램을 구현함.
+7. service() 메소드가 완료되면 클라이언트에게 응답을 보내고 서버에서 실행되는 프로그램은 완료됨. 이때, HttpServletRequest와 HttpServletResponse 객체는 소멸함.
