@@ -16,6 +16,7 @@
     * [web.xml](#web.xml)
     * [@WebServlet](#@WebServlet)
 * [요청정보와 응답정보](#요청정보와-응답정보)
+    * [객체 생성 및 삭제](#객체-생성-및-삭제)
 ## WEB
 ### Java SE
 * JDK(Java Development Kit)
@@ -208,7 +209,8 @@
 * 서블릿의 클래스 선언부 앞에 @WebServlet(접근 시 사용할 URI)를 지정.
 * import 문으로 javax.servlet.annotation.WebServlet 클래스를 소스에 포함해야 함.
 
-### 요청정보와 응답정보
+## 요청정보와 응답정보
+### 객체 생성 및 삭제
 * 요청정보는 HttpServletRequest를 처리하고, 응답정보는 HttpServletResponse가 처리함.
 ![n](imgs/servlet_02.png)
 1. 클라이언트가 웹 브라우저에서 서비스를 요청함. 이때 HTTP 프로토콜 기반으로 요청정보가 만들어져 웹서버에 전달됨.
@@ -218,3 +220,6 @@
 5. init() 메소드 실행이 끝난 다음에는 최초의 요청이든지 그렇지 않든지 서블릿 실행 요청이 들어올 때마다 실행되는 작업으로, 서블릿 컨테이너는HttpServletRequest와 HttpServletResponse 객체를 생성함. HttpServletRequest 객체는 클라이언트로부터 요청받은 정보를 처리할 목적으로 생성하고, HttpServletResponse 객체는 클라이언트에게 보내는 응답정보를 처리할 목적으로 생성함.
 6. service() 메소드를 호출함. 이때, 앞에서 생성한 HttpServletRequest와 HttpServletResponse 객체의 주소를 인자로 넘김. service() 메소드에서는 인자로 받은 두 객체를 사용하여 프로그램을 구현함.
 7. service() 메소드가 완료되면 클라이언트에게 응답을 보내고 서버에서 실행되는 프로그램은 완료됨. 이때, HttpServletRequest와 HttpServletResponse 객체는 소멸함.
+* HttpServletRequest와 HttpServletResponse 객체는 service()메소드가 실행되기 전에 생성되었다가 끝나면 소멸함.
+
+### HTTP 요청정보
